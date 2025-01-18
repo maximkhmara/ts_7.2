@@ -5,6 +5,9 @@ function fetchData() {
 const data = fetchData();
 const person = data;
 function printPersonInfo(person) {
-    console.log(`Name: ${person.name}, Age: ${person.age}`);
+    if (typeof person.name !== "string" || typeof person.age !== "number") {
+        throw new Error("error type");
+    }
 }
 printPersonInfo(person);
+console.log(`Name: ${person.name}, Age: ${person.age}`);
